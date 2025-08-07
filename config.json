@@ -1,0 +1,5 @@
+{
+  "enabled": true,
+  "blocked_sites": ["adult.com", "pornhub.com", "xxx"],
+  "redirect_url": "https://turnintogod.com"
+}
