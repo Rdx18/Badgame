@@ -1,8 +1,9 @@
 {
-  "enabled": false,
+  "enabled": true,
   "blocked_sites": ["youtube.com", "https://youtube.com", "youtube"],
   "redirect_url": "https://facebook.com"
 }
+
 
 
 
