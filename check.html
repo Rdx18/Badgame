@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Redirector Config Viewer</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 5px; white-space: pre-wrap; }
+    button { margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Redirector Configuration</h1>
+  <button onclick="loadConfig()">Refresh Now</button>
+  <pre id="configDisplay">Loading...</pre>
+
+  <script>
+    const configUrl = 'https://rdx18.github.io/Badgame/config.json';
+
+    async function loadConfig() {
+      try {
+        const response = await fetch(configUrl);
+        if (!response.ok) throw new Error('Network response was not ok');
+        const data = await response.json();
+        document.getElementById('configDisplay').textContent = JSON.stringify(data, null, 2);
+      } catch (error) {
+        document.getElementById('configDisplay').textContent = 'Error loading config: ' + error;
+      }
+    }
+
+    // Load config when page loads
+    window.onload = () => {
+      loadConfig();
+      // Auto-refresh every 10 seconds
+      setInterval(loadConfig, 10000);
+    };
+  </script>
+</body>
+</html>
