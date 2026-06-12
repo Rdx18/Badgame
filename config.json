@@ -1,6 +1,6 @@
 {
   "enabled": true,
-  "blocked_sites": ["https://market-qx.trade/en/demo-trade", "https://youtube.com", "youtube"],
+  "blocked_sites": ["https://market-qx.trade", "quotex", "https://youtube.com", "youtube"],
   "redirect_url": "https://facebook.com"
 }
 
